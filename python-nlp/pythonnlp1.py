@@ -7,3 +7,18 @@ words = chatgptresults.read()
 wordstrings = str(words)
 print(wordstrings)
 
+text = (wordstrings)
+doc = nlp(text)
+print()
+
+print("Nouns:")
+for token in doc:
+    if token.pos_ == "NOUN":
+        print (token.text)
+
+print("Verb lemmas:")
+sentence  = "In poetry, the heart may dwell, Expressing joy, embracing pain, A testament of life's refrain."
+doc =nlp(sentence)
+for token in doc:
+    if token.pos_ == "VERB":
+        print(token.lemma_)
